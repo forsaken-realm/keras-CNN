@@ -3,6 +3,7 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
+from keras.datasets import fashion_mnist
 from keras.models import save_model
 
 batch_size = 128
