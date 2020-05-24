@@ -45,7 +45,7 @@ filepath = '/hello/saved.h5'
 save_model(model ,filepath  )
 accu = history.history['accuracy']
 f = open("accuracy.txt" , "w")
-f.write("%d" % accu)
+f.write("%f" % accu)
 f.close()
 
 
