@@ -44,8 +44,9 @@ from tensorflow.keras.models import save_model
 filepath = '/hello/saved.h5'
 save_model(model ,filepath  )
 accu = history.history['accuracy']
+a = accu[0]
 f = open("accuracy.txt" , "w")
-f.write("%f" % accu)
+f.write("%f" % a)
 f.close()
 
 
