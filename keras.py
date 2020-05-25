@@ -18,6 +18,7 @@ y_train = tf.keras.utils.to_categorical(y_train,10 )
 y_test = tf.keras.utils.to_categorical(y_test,10)
 x_train /= 255
 x_test /= 255
+epochs = 10
 model=Sequential()
 model.add(Convolution2D(filters=32, 
                         kernel_size=(3,3), 
@@ -37,14 +38,14 @@ model.compile(loss = 'categorical_crossentropy',
               metrics = ['accuracy'])
 history = model.fit( x_train, y_train,
           batch_size=128,
-          epochs=5,
+          epochs=ephocs,
           verbose=1,
           validation_data=(x_test, y_test))
 from tensorflow.keras.models import save_model
 filepath = '/hello/saved.h5'
 save_model(model ,filepath  )
 accu = history.history['accuracy']
-a = accu[5]
+a = accu[ephochs-1]
 filepath = '/hello/accuracy.txt'
 f = open(filepath , "w")
 f.write("%f" % a)
