@@ -37,14 +37,14 @@ model.compile(loss = 'categorical_crossentropy',
               metrics = ['accuracy'])
 history = model.fit( x_train, y_train,
           batch_size=128,
-          epochs=1,
+          epochs=5,
           verbose=1,
           validation_data=(x_test, y_test))
 from tensorflow.keras.models import save_model
 filepath = '/hello/saved.h5'
 save_model(model ,filepath  )
 accu = history.history['accuracy']
-a = accu[0]
+a = accu[5]
 filepath = '/hello/accuracy.txt'
 f = open(filepath , "w")
 f.write("%f" % a)
